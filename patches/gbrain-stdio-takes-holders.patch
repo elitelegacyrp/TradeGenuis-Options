@@ -1,0 +1,15 @@
+diff --git a/src/mcp/server.ts b/src/mcp/server.ts
+index e9ba87e54..38ffa9fca 100644
+--- a/src/mcp/server.ts
++++ b/src/mcp/server.ts
+@@ -280,7 +280,9 @@ export async function startMcpServer(engine: BrainEngine, opts: { surface?: McpS
+       // instead of throwing unknown_transport. Trust posture unchanged —
+       // stdio stays remote/untrusted.
+       transport: 'stdio',
+-      takesHoldersAllowList: ['world'],
++      // 本地补丁（gbrain-desktop）：stdio 调用方是本机桌面客户端，允许通过 GBRAIN_STDIO_TAKES_HOLDERS
++      // 扩大 takes 持有者白名单（逗号分隔）。未设置时保持上游默认 ['world']。
++      takesHoldersAllowList: (process.env.GBRAIN_STDIO_TAKES_HOLDERS || 'world').split(',').map(s => s.trim()).filter(Boolean),
+       ...(sessionId ? { sessionId } : {}),
+       sourceId: sourceScope.sourceId,
+       ...(sourceScope.localFederatedSourceIds

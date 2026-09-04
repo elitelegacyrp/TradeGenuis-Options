@@ -1,0 +1,22 @@
+{
+  "name": "tradegenuis-options",
+  "productName": "TradeGenuis Options",
+  "version": "0.1.0",
+  "description": "TradeGenuis Options — 期权投研工作台",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac --dir"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.local.tradegenuis-options",
+    "productName": "TradeGenuis Options",
+    "mac": { "category": "public.app-category.productivity", "target": "dir" },
+    "files": ["main.js", "preload.js", "mcp-client.js", "renderer/**", "scripts/**"],
+    "asarUnpack": ["scripts/**"]
+  }
+}
