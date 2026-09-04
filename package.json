@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --mac --dir"
+    "dist": "bash scripts/package-mac.sh"
   },
   "devDependencies": {
     "electron": "^33.0.0",
@@ -15,8 +15,19 @@
   "build": {
     "appId": "com.local.tradegenuis-options",
     "productName": "TradeGenuis Options",
-    "mac": { "category": "public.app-category.productivity", "target": "dir" },
-    "files": ["main.js", "preload.js", "mcp-client.js", "renderer/**", "scripts/**"],
-    "asarUnpack": ["scripts/**"]
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dir"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "mcp-client.js",
+      "renderer/**",
+      "scripts/**"
+    ],
+    "asarUnpack": [
+      "scripts/**"
+    ]
   }
 }

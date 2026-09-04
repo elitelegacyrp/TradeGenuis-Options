@@ -51,7 +51,7 @@ python3 -m pip install pypdf
 
 # 5. 客户端
 cd ~/Desktop/TradeGenuis-Options && npm install && npm start
-# 打包：npx electron-builder --mac --dir → dist/mac-arm64/TradeGenuis Options.app
+# 打包（含 ad-hoc 签名与 zip）：npm run dist → dist/TradeGenuis Options-<版本>-arm64-mac.zip
 ```
 
 启动后在「设置」填 `DEEPSEEK_API_KEY`（投研、问答、检查、复盘需要），其余功能无需 key。
@@ -60,11 +60,13 @@ cd ~/Desktop/TradeGenuis-Options && npm install && npm start
 
 ### 下载安装（不想自己打包）
 
-到 [Releases](https://github.com/Theclues/TradeGenuis-Options/releases) 下载 `TradeGenuis Options-<版本>-arm64-mac.zip`，解压后把 App 拖进「应用程序」。App 未签名，首次打开请右键 → 打开，或在终端执行：
+到 [Releases](https://github.com/Theclues/TradeGenuis-Options/releases) 下载 `TradeGenuis Options-<版本>-arm64-mac.zip`，解压后把 App 拖进「应用程序」。App 是 ad-hoc 签名、未经苹果公证，首次打开若提示"无法验证开发者"或"已损坏"，在终端执行一次：
 
 ```bash
 xattr -dr com.apple.quarantine "/Applications/TradeGenuis Options.app"
 ```
+
+或到 系统设置 → 隐私与安全性 → 页面底部「仍要打开」。
 
 App 只是客户端，仍需按上面第 1–4 步装好 gbrain、Ollama 和起始知识库。
 
@@ -139,7 +141,7 @@ python3 -m pip install pypdf
 
 # 5. Client
 cd ~/Desktop/TradeGenuis-Options && npm install && npm start
-# Package: npx electron-builder --mac --dir → dist/mac-arm64/TradeGenuis Options.app
+# Package (ad-hoc signed zip): npm run dist → dist/TradeGenuis Options-<version>-arm64-mac.zip
 ```
 
 Enter `DEEPSEEK_API_KEY` in Settings (needed for research, ask, plan check, review). Everything else works without a key.
@@ -148,11 +150,13 @@ Edit `~/brain-options/people/me.md` with your own style and discipline first, th
 
 ### Download (no build)
 
-Grab `TradeGenuis Options-<version>-arm64-mac.zip` from [Releases](https://github.com/Theclues/TradeGenuis-Options/releases), unzip, drag the app into Applications. It is unsigned: right-click → Open on first launch, or run:
+Grab `TradeGenuis Options-<version>-arm64-mac.zip` from [Releases](https://github.com/Theclues/TradeGenuis-Options/releases), unzip, drag the app into Applications. It is ad-hoc signed and not notarized; if macOS says "damaged" or "unidentified developer", run once:
 
 ```bash
 xattr -dr com.apple.quarantine "/Applications/TradeGenuis Options.app"
 ```
+
+or System Settings → Privacy & Security → "Open Anyway".
 
 The app is only the client; steps 1–4 above (gbrain, Ollama, starter brain) are still required.
 
