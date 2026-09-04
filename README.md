@@ -58,6 +58,16 @@ cd ~/Desktop/TradeGenuis-Options && npm install && npm start
 
 先改 `~/brain-options/people/me.md` 写你自己的交易风格与纪律，然后在知识库里重新导入。它是所有 AI 输出的核对基准。
 
+### 下载安装（不想自己打包）
+
+到 [Releases](https://github.com/Theclues/TradeGenuis-Options/releases) 下载 `TradeGenuis Options-<版本>-arm64-mac.zip`，解压后把 App 拖进「应用程序」。App 未签名，首次打开请右键 → 打开，或在终端执行：
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/TradeGenuis Options.app"
+```
+
+App 只是客户端，仍需按上面第 1–4 步装好 gbrain、Ollama 和起始知识库。
+
 ### 架构
 
 - Electron 主进程常驻一个 `gbrain serve`（stdio MCP），所有读写走它；PGLite 是进程独占锁，多个 CLI 进程并发会等锁失败。没有 MCP 等价物的命令（导入目录 / embed / doctor）走"暂停 serve → 执行 → 恢复"通道。
@@ -135,6 +145,16 @@ cd ~/Desktop/TradeGenuis-Options && npm install && npm start
 Enter `DEEPSEEK_API_KEY` in Settings (needed for research, ask, plan check, review). Everything else works without a key.
 
 Edit `~/brain-options/people/me.md` with your own style and discipline first, then re-import. It is the baseline every AI output is checked against.
+
+### Download (no build)
+
+Grab `TradeGenuis Options-<version>-arm64-mac.zip` from [Releases](https://github.com/Theclues/TradeGenuis-Options/releases), unzip, drag the app into Applications. It is unsigned: right-click → Open on first launch, or run:
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/TradeGenuis Options.app"
+```
+
+The app is only the client; steps 1–4 above (gbrain, Ollama, starter brain) are still required.
 
 ### Architecture
 
